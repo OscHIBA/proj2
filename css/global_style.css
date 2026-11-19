@@ -1,15 +1,25 @@
+/*Import af Inter fonten fra Google siden basic HTML ikke inkludere den*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+/* 
+Root variabler. Holder numre og favere der bliver brugt af flere forskellige klasser.
+*/
 :root{
-    --MaxPagegap: 1100px;
+    --SideGap: 1100px; /*pixel størelse so */
     --DoubleSectionMaxSize: 800px;
 
     --DarkBlue: #181C43;
     --MediumBlue: #365C93;
-    --Background1: white;
-    --Background2: #F6F6F6;
+    --Background1: #abc4ff;
+    --Background2: #ffffff; /*body background farve*/
 }
 
+
+/* 
+Endre den root rem størelse for font sizen, så det effekter af alt text på siden efter skærm-størelsen.
+Går fra 16px (rem defaulten) til 12px ved mindre skærmstørelser
+*/
 html {
     font-size: clamp(12px, 1.5vw, 16px);
 }
@@ -23,6 +33,10 @@ html {
 
 }
 
+/*
+Bodiens children er anlagt i et vertical grid.
+Hjælper med at holde footer og headeren fast til bunden og toppen af skærmen
+*/
 body {
   display: grid;
   background-color: var(--Background2);
@@ -33,6 +47,9 @@ body {
 
 
 
+/* 
+Tekst klasser for headers & p
+*/
 
 h1 {
     color: var(--DarkBlue);
@@ -43,10 +60,14 @@ h1 {
 
 }
 
-h1.bold {
+/* 
+    .bold og .blue f.eks. bliver brugt til spcefikke variationer af de allerede eksisterne tekst klasser
+*/
+h1.bold { 
     color: var(--DarkBlue);
-    font-weight: 600;
+    font-weight: 800;
 }
+
 
 
 h2 {
@@ -65,6 +86,14 @@ h3 {
     letter-spacing: 0;
 }
 
+h3.bold {
+    font-weight: 800;
+}
+
+h3.bold a {
+    font-weight: 800;
+}
+
 h3.blue {
     color: var(--MediumBlue);
 }
@@ -73,12 +102,15 @@ h3.white {
     color: white;
 }
 
+
+
 h4 {
     font-size: 1.5rem;
 
     font-weight: 500;
     letter-spacing: 0;
 }
+
 
 p {
     color: var(--DarkBlue);
@@ -91,6 +123,8 @@ p.big {
     font-weight: 500;
     letter-spacing: 0;
 }
+
+
 
 img {
   border: 1rem solid var(--DarkBlue);
@@ -105,7 +139,7 @@ img {
 
 
 .container {
-    width: min(100% - 1rem, var(--MaxPagegap));
+    width: min(100% - 1rem, var(--SideGap));
     margin: 1.2rem auto;
 }
 
@@ -113,9 +147,25 @@ img {
     margin-bottom: 10rem;
     flex: 1;
 }
+
 .subcontainer div {
     margin-bottom: 1.5rem;
 }
+
+.subcontainer.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.subcontainer.center div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 
 .doublecontainer {
@@ -167,7 +217,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;         
-    padding: 0 max(1rem, (100% - var(--MaxPagegap)) / 2);
+    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
 }
 
 
@@ -205,17 +255,18 @@ header > :last-child a:hover {
 
 footer {
     background-color: var(--Background1);
-    border-bottom: 1px solid #676767;
+    /*border-top: 1px solid #676767;*/
     display: flex;
+    height: 5rem;
     justify-content: space-between;
-    align-items: stretch;         
-    padding: 0 max(1rem, (100% - var(--MaxPagegap)) / 2);
+    align-items: center;         
+    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
 }
 
 footer > :last-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex: 0 1 50%;  
+    flex: 0 1 40%;  
     gap: 1.5rem;       
 }
