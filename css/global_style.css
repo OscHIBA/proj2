@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
-    
+    --MaxPagegap: 1400px;
+
     --DarkBlue: #181C43;
+    --MediumBlue: #365C93;
     --Background1: white;
     --Background2: #F6F6F6;
+}
+
+html {
+    font-size: clamp(12px, 1.1vw, 16px);
 }
 
 * {
@@ -12,6 +18,7 @@
     color: rgb(0, 0, 0);
     font-family: "Inter", sans-serif;
     font-weight: 300;
+    box-sizing: border-box;
 
 }
 
@@ -19,7 +26,7 @@ body {
   display: grid;
   background-color: var(--Background2);
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  min-height: 100vh; 
   margin: 0;
 }
 
@@ -27,34 +34,37 @@ body {
 
 h1 {
     color: var(--DarkBlue);
-    font-size: 60px;
+    font-size: 4rem;
     
     font-weight: 200;
-    letter-spacing: 5px;
+    letter-spacing: 0.3rem;
 
 }
 
 h1.bold {
     color: var(--DarkBlue);
-    font-size: 64px;
     font-weight: 600;
 }
 
 
 h2 {
     color: var(--DarkBlue);
-    font-size: 40px;
+    font-size: 2.5rem;
 
     font-weight: 200;
-    letter-spacing: 5px;
+    letter-spacing: 0.3rem;
 }
 
 h3 {
     color: var(--DarkBlue);
-    font-size: 28px;
+    font-size: 1.75rem;
 
     font-weight: 500;
-    letter-spacing: 0px;
+    letter-spacing: 0;
+}
+
+h3.blue {
+    color: var(--MediumBlue);
 }
 
 h3.white {
@@ -62,46 +72,90 @@ h3.white {
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 1.5rem;
 
     font-weight: 500;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
 p {
     color: var(--DarkBlue);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
 p.big {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 500;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
+img {
+  border: 1.25rem solid var(--DarkBlue);
+  box-sizing: border-box;
+  width: 32rem;
+  max-width: 100%;
+}
 
 
 
 .container {
-    margin: 25px 225px;
-    flex: 1;
+    width: min(100% - 1rem, var(--MaxPagegap));
+    margin: 1.2rem auto;
 }
 
 .subcontainer {
-    margin: 25px 0;
+    margin-bottom: 10rem;
     flex: 1;
 }
+.subcontainer div {
+    margin-bottom: 1.5rem;
+}
+
+.doublecontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 4rem;
+}
+
+@media (max-width: 1000px) {
+    .doublecontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .doublecontainer img {
+        max-width: 100%;
+    }
+}
+
+
+
+.pointlist {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.pointlist li {
+    color: var(--DarkBlue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
 
 
 
 .topbar {
     background-color: var(--Background1);
-    border-bottom: 1px solid #d0d0d0;
+    border-bottom: 1px solid #676767;
     display: flex;
     justify-content: space-between;
     align-items: stretch;         
-    padding: 0 225px;              
+    padding: 0 max(1rem, (100% - var(--MaxPagegap)) / 2);
 }
 
 
@@ -109,17 +163,20 @@ p.big {
     background-color: var(--DarkBlue);
     display: flex;
     align-items: center;
-    padding: 12px 12px;
+    align-content: left;
+    padding: 0.75rem;
 }
 
 .topbarRight {
     display: flex;
     align-items: center;
-    gap: 90px;
+    justify-content: space-between;
+    flex: 0 1 50%;  
+    gap: 1.5rem;       
 }
 
 .topbarRight a {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--DarkBlue);
     text-decoration: none;
 }
