@@ -6,6 +6,7 @@
     
     <link rel="stylesheet" href="css/global_style.css">
     
+    <!--icon til taskbaren af websiten-->
     <link rel="icon" href="/images/Icon.png">
     <title>Hvordan - TusindSikkerhed</title>
 </head>
@@ -17,7 +18,7 @@
             <a href="index.html" class="logo">TusindSikkerhed.dk</a>
         </div>
 
-        <nav>
+        <nav aria-label="Hovedmenu">
             <a href="index.html">Hjem</a>
             <a href="hvordan.html">Hvordan</a>
             <a href="kontakt.html">Kontakt</a>
@@ -30,6 +31,8 @@
 
     <!--Main-->
     <main>
+
+        <!--titel/intro sektion -->
         <section class="subcontainer">
             <div>
                 <h1>
@@ -40,63 +43,84 @@
 
             <div>
                 <p>
-                    Digital svindel udvikler sig hele tiden. Et af de seneste typer, efterligner dine kæres, eller kendtes stemmer, og prøver at ophave penge fra dig.<br/>
-                    Her kan du lærer hvordan du kan nemt og hurtigt beskydte dig og dine nermeste med sikkerheds sætninger.
+                    Svindlere har i dag et avanceret system til at finde og klone personer online, primært via brug af offentlige tilgængelige ressourcer som sociale medier, arkiver, og lækkede data. 
+                    Svindlere bruger forskellige metoder, men ofte foregår det på denne måde: <br>
+                    Først indsamles der data og konstrueres en profil af den person, som AI'en skal efterligne. Dette kan f.eks. være en Facebook profil hvor den indsamler data som fødselsdage, familiemedlemmer, job, osv.<br>
+                    Til stemmekloning bruges der blandt andet videoer af personen, der taler på videoer på sociale medier eller optagelser fra tidligere spam-opkald.<br>
+                    Når AI'en har indsamlet disse data, begynder den at kontakte og svindle personens bekendte over SMS og telefon.
                 </p>
             </div>  
             
+            <!--billede -->
             <center>
-                <img src="images/processexample.png" alt="
-                Diagram: Svindlere henter stemmeklip fra Facebook og Instagram, en AI kopierer stemmen, og svindleren ringer til offeret forklædt som en du kender.
-                ">
+                <figure>
+                    <img src="images/processexample.png" alt="
+                    Diagram i fire trin: Facebook- og Instagram-ikoner, et øre der lytter, en AI-chip, og til sidst en maske og en telefon, der forbinder til en person.
+                    ">
+                    <figcaption>Sådan foregår det: svindleren henter lydklip af din stemme fra sociale medier, en AI kopierer stemmen, og svindleren ringer forklædt som dig til en, du kender.</figcaption>
+                </figure>
             </center>
         </section>
 
         
        <section class="subcontainer">
             <div class="doublecontainer" >
+                <!--punktliste -->
                 <div>
                     <center>
-                        <h2 class="blue">Ting der Ikke kan beskytte dig:</h2>
+                        <h2 class="blue">Ting der ikke kan beskytte dig:</h2>
                     </center>
                     <ul class="pointlist">
-                        <li>Det beskytter dig ikke at stole på dine ører. AI kan efterligne en stemme ud fra få sekunders lydklip fra sociale medier, videoer eller telefonsvarere. Selvom stemmen lyder præcis som din datter, chef eller bankrådgiver, beviser det ikke, hvem der ringer.</li>
-                        <li>Telefonnummeret, du ser på skærmen, kan være falsk. Svindlere kan nemt forfalske det (det kaldes spoofing), så et opkald eller en sms kan se ud til at komme fra et nummer, du kender, uden at gøre det.</li>
-                        <li>Du kan ikke regne med at høre en forskel. Falske stemmer bliver bedre hele tiden, og når man er presset eller bange, opdager selv opmærksomme mennesker sjældent de små fejl.</li>
-                        <li>Personlige oplysninger gør ikke en besked ægte. Selvom den anden på linjen kender f.eks. dit navn, familie eller arbejdsplads, kan oplysningerne sagtens komme fra offentlige profiler eller lækkede data.</li>
+                        <li>Det beskytter dig ikke at stole på dine ører. AI kan efterligne en stemme ud fra få sekunders lydklip fra sociale medier, videoer eller telefonsvarere. Selvom stemmen lyder præcis som din datter, chef eller bankrådgiver, kan du ikke være sikker på, hvem der ringer.</li>
+                        <li>Telefonnummeret, du ser på skærmen, kan være falsk. Svindlere kan nemt forfalske det (det kaldes spoofing), så det ser ud som om, at et opkald eller en sms kommer fra et nummer, du kender, uden at gøre det.</li>
+                        <li>Du kan ikke regne med at kunne høre forskel. Falske stemmer bliver bedre hele tiden, og når man er presset eller bange, opdager selv opmærksomme mennesker sjældent de små fejl.</li>
+                        <li>Personlige oplysninger gør ikke en besked ægte. Selvom den anden på linjen f.eks. kender dit navn, familie eller arbejdsplads, kan oplysningerne sagtens komme fra offentlige profiler eller lækkede data.</li>
                     </ul>
                 </div>
+                
+                <!--punktliste -->
                 <div>
                     <center>
                         <h2 class="blue">Ting der kan beskytte dig</h2>
                     </center>
                     <ul class="pointlist">
                         <li>Får du en uventet anmodning om penge, koder eller hjælp, så læg på og ring selv tilbage. Ring til personen på et nummer, du allerede har gemt, og brug aldrig det nummer eller link, der står i beskeden.</li>
-                        <li>Aftal en sikkerheds sætning, some før beskrevet, med din familie. Ordet må aldrig stå online, og det skal være noget, en svindler ikke kan gætte.</li>
+                        <li>Aftal en sikkerhedssætning, som før beskrevet, med din familie. Ordet må aldrig stå online, og det skal være noget, en svindler ikke kan gætte.</li>
                         <li>Sæt tempoet ned, når nogen presser dig. Svindel bygger næsten altid på hastværk som “Det skal ske nu” eller “Fortæl det ikke til nogen”, så jo mere en besked presser dig, jo større grund er der til at stoppe og tjekke den.</li>
-                        <li>Begræns, hvor meget af din stemme og dine data der ligger online. Gør dine profiler på sociale medier private, hvor det er muligt, og overvej, hvor mange videoer og lydklip med din stemme der er offentlige. Jo mindre materiale der findes, jo sværere er det at lave en troværdig kopi.</li>
+                        <li>Begræns, hvor meget af din stemme og dine data, der ligger online. Gør dine profiler på sociale medier private, hvor det er muligt, og overvej, hvor mange videoer og lydklip med din stemme der er offentlige. Jo mindre materiale der findes, jo sværere er det at lave en troværdig kopi.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!--tjekliste -->
         <section class="subcontainer">
             <div>
                 <center>
-                    <h2 class="blue"> Her er en tjekliste som du kan bruge til at opfriske og tjekke din nuværende sikkerhed</h2>
+                    <h2 class="blue"> Her er en tjekliste, som du kan bruge til at opfriske og tjekke din nuværende sikkerhed</h2>
                 </center>
                 
-                <ul class="pointlist">
+                <!-- skifter "li"'s bullet icon ud med et tjek icon, se css' -->
+                <ul class="pointlist checklist"> 
                     <li>Jeg har aftalt et kodeord med min familie og mine nærmeste.</li>
                     <li>Jeg har gemt de rigtige numre på familie, bank og arbejdsplads, så jeg selv kan ringe op.</li>
                     <li>Jeg overfører aldrig penge og deler aldrig koder, MitID-oplysninger eller kortdata på grund af  et opkald eller en besked alene.</li>
-                    <li>Mine profiler på sociale medier er sat til private, og jeg har ryddet op i offentlige videoer og lydklip.</li>
+                    <li>Mine profiler på sociale medier er sat til privat, og jeg har ryddet op i offentlige videoer og lydklip.</li>
                     <li>Jeg har slået totrinsbekræftelse til på e-mail, bank og sociale medier.</li>
                     <li>Jeg har talt med ældre familiemedlemmer om, hvordan svindlen foregår, og hvad de skal gøre.</li>
                     <li>Jeg ved, hvordan jeg anmelder svindel til politiet og spærrer mit kort hos banken.</li>
                 </ul>
             </div>
         </section>
+
+        <!-- hjælp links -->
+        <center>
+            <section class="subcontainer">
+                <div>
+                    <h2>Har du spørgsmål om dette emne? <a class="bold" href="kontakt.html">Kontakt os</a></h2>
+                </div> 
+            </section>
+        </center>
     </main>
 
 
@@ -106,10 +130,10 @@
     <!--Footer-->
     <footer>
         <div>
-            <a>© 2026 TusindSikkerhed. Alle Rettigheder.</a>
+            <p><small>© 2026 TusindSikkerhed. Alle rettigheder forbeholdes.</small></p>
         </div>
         
-        <nav>
+        <nav aria-label="Footer">
             <a href="privacypolicy.html">Privatlivspolitik</a>
             <a href="termsofservice.html">Servicevilkår</a>
             <a href="kontakt.html">Kontakt</a>

@@ -6,6 +6,7 @@
     
     <link rel="stylesheet" href="css/global_style.css">
     
+    <!--icon til taskbaren af websiten-->
     <link rel="icon" href="/images/Icon.png">
     <title>Forside - TusindSikkerhed</title>
 </head>
@@ -17,7 +18,7 @@
             <a href="index.html" class="logo">TusindSikkerhed.dk</a>
         </div>
 
-        <nav>
+        <nav aria-label="Hovedmenu">
             <a href="index.html">Hjem</a>
             <a href="hvordan.html">Hvordan</a>
             <a href="kontakt.html">Kontakt</a>
@@ -28,6 +29,8 @@
 
     <!--main-->
     <main>
+
+        <!--titel/intro sektion -->
         <section class="subcontainer">
             <div>
                 <h1>
@@ -40,61 +43,76 @@
 
             <div>
                 <p>
-                    Digital svindel udvikler sig hele tiden. Et af de seneste typer, efterligner dine kæres, eller kendtes stemmer, og prøver at ophave penge fra dig.<br/>
-                    Her kan du lærer hvordan du kan nemt og hurtigt beskydte dig og dine nermeste med sikkerheds sætninger.
+                    Digital svindel udvikler sig hele tiden. Et af de seneste typer efterligner dine kæres eller dine bekendtes stemmer og prøver at opkræve penge fra dig.<br/>
+                    Her kan du lære, hvordan du kan nemt og hurtigt kan beskytte dig og dine nærmeste med sikkerhedssætninger.
                 </p>
             </div>    
         </section>
-  
+
+
+        <!--punkliste og billede1 -->
         <section class="subcontainer">
             <div class="doublecontainer" >
+                <!--punktliste -->
                 <div>
-                    <h2 class="blue">Sådan kan nogle af de mest normale AI-stemmesvindeler se ud. Hold øje med disse kende tægn.</h2>
+                    <h2 class="blue">Sådan kan nogle af de mest normale AI-stemmesvindlere se ud. Hold øje med disse kendetegn.</h2>
                     <ul class="pointlist">
                         <li>De kan ringe til dig og lyde præcis som dit barn, en ven, osv.</li>
                         <li>Beskeden kan være f.eks.: “Jeg har været ude for en ulykke og har brug for penge nu!”</li>
                         <li>Du kan få en talebesked fra et ukendt nummer: “Jeg har mistet min telefon og har brug for [...]!”</li>
-                        <li>De presser altid på tiden, så du ikke når at tænke dig om.</li>
-                        <li>Beskederne eller opkaldene kan komme fra personens rigtige nummer i nogle tildfælde.</li>
+                        <li>De siger, det haster, så du ikke når at tænke dig om.</li>
+                        <li>Beskederne eller opkaldene kan i nogle tilfælde komme fra personens rigtige nummer.</li>
                     </ul>
                 </div>
-              
-                <div>
+
+                <!--billede -->
+               <figure>
                     <img src="images/example1.png" alt="
-                    Eksempel på en svindel besked over SMS. 
-                    SMS fra 'Anastasia': 'MOR jeg har været ude for en ulykke og jeg er nød til at sende 5000 kr til nogen lige nu!'">
-                </div>
+                    Skærmbillede af en sms fra kontakten 'Anastasia': 'MOR jeg har været ude for en ulykke og jeg er nød til at sende 5000 kr til nogen lige nu!'
+                    ">
+                    <figcaption>Eksempel på en svindelbesked: afsenderen lyder som et familiemedlem, og der er travlt med at få penge.</figcaption>
+                </figure>
             </div>
         </section>
 
 
+        <!--punkliste og billede2 -->
         <section class="subcontainer">
-            <div class="doublecontainer reverse" >
+            <div class="doublecontainer" >
+                <!--billede -->
+                <figure>
+                    <img src="images/example2.png" alt="
+                    Skærmbillede af en sms-samtale. 'Anastasia' skriver: 'MOR jeg har været ude for en ulykke og jeg er nød til at sende 5000 kr til nogen lige nu!' Svaret er: 'Kunne du sende jeres kodesætning først?' 'Anastasia' svarer: 'Katten Spidser Snoren'.
+                    ">
+                    <figcaption>Bed om jeres sikkerhedssætning, før du gør noget. Kan personen sige den, er det den rigtige. Kan de ikke, så læg på.</figcaption>
+                </figure>
+                
+                <!--punktliste -->
                 <div>
-                    <img src="images/example2.png" alt="Eksempel på hvordan man kan svare til en svindel besked.">
-                </div>
-
-                <div>
-                    <h2 class="blue">Hvordan en privat sikkerheds sætning kan holde dig og dine kære sikre.</h2>
+                    <h2 class="blue">Hvordan en privat sikkerhedssætning kan holde dig og dine kære sikre.</h2>
                     <ul class="pointlist">
                         <li>En sikkerhedssætning er en hemmelig sætning, som kun du og din familie kender.</li>
-                        <li>Svindleren kan efterligne stemmen, men kan ikke kende jeres sætning.</li>
+                        <li>Svindleren kan efterligne stemmen, men kender ikke jeres sætning.</li>
                         <li>Bed om sætningen, hvis du får et mistænkeligt opkald, og læg på, hvis personen ikke kan sige den.</li>
-                        <li>Vælg noget, der er nemt at huske, men svært at gætte, fx “Katten Spidser Snoren”</li>
-                        <li>Del den aldrig på nettet eller til unkendte.</li>
+                        <li>Vælg noget, der er nemt at huske, men svært at gætte, fx “Musen jager katten"</li>
+                        <li>Del den aldrig på nettet eller med ukendte personer.</li>
                     </ul>
                 </div>
             </div>
         </section>
-
-        <section class="subcontainer center">
-            <div>
-                <h2>Læs her mere om <a class="bold" href="hvordan.html">Hvordan</a></h2>
-            </div>
-            <div>
-                <h2>Har du spørgsmål om dette emne? <a class="bold" href="kontakt.html">Kontakt os</a></h2>
-            </div> 
-        </section>
+        
+        <!-- hjælp links -->
+        <center>
+            <section class="subcontainer">
+                <!-- måske skulle href teksten ikke være med h2? -->
+                <div>
+                    <h2>Læs her mere om <a class="bold" href="hvordan.html">Hvordan</a></h2>
+                </div>
+                <div>
+                    <h2>Har du spørgsmål om dette emne? <a class="bold" href="kontakt.html">Kontakt os</a></h2>
+                </div> 
+            </section>
+        </center>
     </main>
 
 
@@ -102,7 +120,7 @@
     <!--footer-->
     <footer>
         <div>
-            <a>© 2026 TusindSikkerhed. Alle Rettigheder.</a>
+            <p><small>© 2026 TusindSikkerhed. Alle rettigheder forbeholdes.</small></p>
         </div>
         
         <nav>

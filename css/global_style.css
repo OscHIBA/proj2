@@ -1,3 +1,5 @@
+/* CTRL+K & CTRL+C, kommentar shortcut */
+
 /*Import af Inter fonten fra Google siden basic HTML ikke inkludere den*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -12,13 +14,15 @@ Root variabler. Holder numre og favere der bliver brugt af flere forskellige kla
     --DarkBlue: #181C43;
     --MediumBlue: #365C93;
     --Background1: #b5d4ff;
-    --Background2: #ffffff; /*body background farve*/
+    --Background2: #ffffff; 
 }
 
 
 /* 
 Endre den root rem størelse for font sizen, så det effekter af alt text på siden efter skærm-størelsen.
-Går fra 16px (rem defaulten) til 12px ved mindre skærmstørelser
+Går fra 16px (rem defaulten) til 12px ved mindre skærmstørelse
+
+edit: skiftet til rem for ikke at ændre default font size, required af WCAG
 */
 html {
     font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
@@ -49,11 +53,10 @@ body {
 
 
 /* 
-Tekst klasser for headers & p
+globale klasser
 
 .bold og .blue f.eks. bliver brugt til spcefikke variationer af de allerede eksisterne tekst klasser
 */
-
 h1 {
     color: var(--DarkBlue);
     font-size: 4rem;
@@ -116,13 +119,11 @@ p.big {
     font-weight: 500;
     letter-spacing: 0;
 }
-/* links inde i tekst (f.eks. email og tlf på kontakt siden) */
+/* links inde i tekst, f.eks. email og tlf på kontakt siden */
 p a {
     color: var(--DarkBlue);
     font-weight: inherit;
 }
-
-
 
 
 img {
@@ -133,6 +134,16 @@ img {
   max-width: 100%;
 }
 
+/* img figure captions, såden set billede tekst*/
+figure {
+    margin: 0;
+    text-align: center; 
+}
+figcaption {
+    color: var(--DarkBlue);
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
 
 
 
@@ -203,12 +214,12 @@ footer > :last-child {
     flex: 0 1 40%;  
     gap: 1.5rem;       
 }
-
+footer small {
+    color: black;
+}
 footer a {
     color: black;
 }
-
-
 
 /*--------Basic containers og lister------*/
 
@@ -218,32 +229,18 @@ main {
     margin: 1.2rem auto;
 }
 
+
 /*subcontainer, bruges til at opdele sektioner*/
 .subcontainer { 
     margin-bottom: 10rem;
     flex: 1;
 }
-
 .subcontainer div {
     margin-bottom: 1.5rem;
 }
 
-.subcontainer.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
 
-.subcontainer.center div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/*doublecontainer, bruges til a display elementer i 2 kolonner*/
+/*doublecontainer, bruges til a vise elementer i 2 kolonner*/
 .doublecontainer {
     display: flex;
     justify-content: space-between;
@@ -251,6 +248,11 @@ main {
     gap: 4rem;
 }
 
+
+/* 
+Når skærmen kommer under den max-width defineret, så overwriter @media de elementer den indeholder.
+dette gøres så billderene bliver vist under teksten  
+*/
 @media (max-width: 700px) {
     .doublecontainer {
         flex-direction: column;
@@ -258,21 +260,24 @@ main {
         gap: 2rem;
     }
 
+    /* ændre størelsen af billedet siden den tidligere størelse fra de 2 kolonner ikke længre passer */
     .doublecontainer img {
         width: 32rem;
         max-width: 100%;
     }
 
+    /* specefikt til doublecontainere med img definiret først. reverser columnen så billedet bliver nedenunder teksten */
     .doublecontainer.reverse {
         flex-direction: column-reverse;
     }
 }
 
+
+/*punklister*/
 .pointlist {
     margin-top: 1.5rem;
     padding-left: 1.5rem;
 }
-
 .pointlist li {
     color: var(--DarkBlue);
     font-size: 1.5rem;
@@ -280,10 +285,30 @@ main {
 }
 
 
+/*
+    fjener poinlists prikker og sætter et ascii checkmark ikon ind i stædet
+    
+    kunne gøres med ::marker men kan gøre at en skærmlæser, læser alle ✔ ikonerne op (tror jeg).
+    dette giver det samme resultat ligemeget hvad
+ */
+.checklist {
+    list-style: none; /* fjerner prikkerne */
+    padding-left: 0;
+}
+.checklist li { 
+    display: flex;
+    gap: 0.75rem;
+}
+
+.checklist li::before {
+    content: "✔" / "";  /*sætter ikonet, det tomme string efter / får skærmlæsere til at springe det over siden definition er tom*/
+    color: var(--MediumBlue);
+    font-weight: 800;
+}
+
 
 
 /*-------kontakt formular-------*/
-
 .kontaktform {
     background-color: var(--DarkBlue);
     display: flex;
@@ -310,6 +335,8 @@ main {
     padding: .5rem;
 }
 
+
+/* send knap */
 .kontaktform button {
     font-size: 1.5rem;
     font-weight: 400;
@@ -321,10 +348,12 @@ main {
     border-radius: 0;
     border: none;
 }
+/* når musen er over knappen */
 .kontaktform button:hover {
     background-color: var(--Background1);
 }
-.kontaktform button:active {
+/* når kappen trykkes/holdes nede */
+.kontaktform button:active { 
     background-color: var(--MediumBlue);
 }
 
@@ -345,7 +374,6 @@ main {
     min-height: 15rem;
 
     resize: vertical;
-    overflow: hidden;
     
     color: black;
     
