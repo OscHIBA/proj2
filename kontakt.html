@@ -1,11 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/global_style.css">
+    
+    <link rel="icon" href="/images/Icon.png">
     <title>Kontakt - TusindSikkerhed</title>
 </head>
-<body>
+<body> 
+
+    <!--Header-->
+    <header>
+        <div>
+            <a href="index.html" class="logo">TusindSikkerhed.dk</a>
+        </div>
+
+        <nav>
+            <a href="index.html">Hjem</a>
+            <a href="hvordan.html">Hvordan</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
     
+
+
+
+
+    <!--Main-->
+    <main>
+        <center>
+            <section class="subcontainer">
+                    <div>
+                        <h1>Kontakt Os</h1>
+                    </div>
+                    <div>         
+                        <p>Du kan til enhvertid kontakte TusindSikkerhed for: hjælp med siden, spørgsmål om emner, hjælp til log-on, osv.</p>
+                        <p>Nedenfor er vores kontakt information samt en kontakt formular.</p>
+                    </div>
+                    <div>
+                        <p class="big">Email: <a href="mailto:service@tusindsikkerhed.dk">service@tusindsikkerhed.dk</a></p>
+                        <p class="big">Tlf: <a href="tel:+4559389253">+45 59 38 92 53</a></p>
+                    </div>
+
+            </section>
+            
+
+            <section class="subcontainer">
+                <form class="kontaktform">
+                    <fieldset>
+                        <label for="name"> Navn:
+                            <input id="name" type="text", class="userinfo", name="name", placeholder="Did Navn...">
+                        </label>
+                         <label for="e-mail"> Email:
+                            <input id="e-mail" type="text", class="userinfo", name="e-mail", placeholder="Din Email...">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="message"> Besked:
+                            <textarea id="message", class="message", name="message", placeholder="Din besked..."></textarea>
+                        </label>
+                    </fieldset>
+
+                    <button type="submit" aria-label="send knap">Send</button>
+                </form>
+
+            </section>
+
+            
+            <p>Informationen herpå er falsk :]</p>
+        </center>
+    </main>
+
+
+    
+
+
+    <!--Footer-->
+    <footer>
+        <div>
+            <a>© 2026 TusindSikkerhed. Alle Rettigheder.</a>
+        </div>
+        
+        <nav>
+            <a href="privacypolicy.html">Privatlivspolitik</a>
+            <a href="termsofservice.html">Servicevilkår</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </footer>
 </body>
 </html>

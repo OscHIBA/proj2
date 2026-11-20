@@ -6,12 +6,12 @@
 Root variabler. Holder numre og favere der bliver brugt af flere forskellige klasser.
 */
 :root{
-    --SideGap: 1100px; /*pixel størelse so */
+    --SideGap: 1200px; /*pixel størelse so */
     --DoubleSectionMaxSize: 800px;
 
     --DarkBlue: #181C43;
     --MediumBlue: #365C93;
-    --Background1: #abc4ff;
+    --Background1: #b5d4ff;
     --Background2: #ffffff; /*body background farve*/
 }
 
@@ -21,12 +21,12 @@ Endre den root rem størelse for font sizen, så det effekter af alt text på si
 Går fra 16px (rem defaulten) til 12px ved mindre skærmstørelser
 */
 html {
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
 }
 
 * {
     margin: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: "Inter", sans-serif;
     font-weight: 300;
     box-sizing: border-box;
@@ -41,6 +41,7 @@ body {
   display: grid;
   background-color: var(--Background2);
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100vh; 
   margin: 0;
 }
@@ -49,6 +50,8 @@ body {
 
 /* 
 Tekst klasser for headers & p
+
+.bold og .blue f.eks. bliver brugt til spcefikke variationer af de allerede eksisterne tekst klasser
 */
 
 h1 {
@@ -60,25 +63,19 @@ h1 {
 
 }
 
-/* 
-    .bold og .blue f.eks. bliver brugt til spcefikke variationer af de allerede eksisterne tekst klasser
-*/
-h1.bold { 
-    color: var(--DarkBlue);
+/*span til når h1 skal stå på flere linjer, kopier enskaberne fra h1*/
+h1 span {
+    display: block;
+    color: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+h1 span.bold {
     font-weight: 800;
 }
 
-
-
 h2 {
-    color: var(--DarkBlue);
-    font-size: 2.5rem;
-
-    font-weight: 200;
-    letter-spacing: 0.3rem;
-}
-
-h3 {
     color: var(--DarkBlue);
     font-size: 1.75rem;
 
@@ -86,23 +83,19 @@ h3 {
     letter-spacing: 0;
 }
 
-h3.bold {
+h2.bold {
     font-weight: 800;
 }
 
-h3.bold a {
+h2 a.bold {
+    display: block;
     font-weight: 800;
+    color: var(--DarkBlue);
 }
 
-h3.blue {
+h2.blue {
     color: var(--MediumBlue);
 }
-
-h3.white {
-    color: white;
-}
-
-
 
 h4 {
     font-size: 1.5rem;
@@ -123,11 +116,18 @@ p.big {
     font-weight: 500;
     letter-spacing: 0;
 }
+/* links inde i tekst (f.eks. email og tlf på kontakt siden) */
+p a {
+    color: var(--DarkBlue);
+    font-weight: inherit;
+}
+
 
 
 
 img {
   border: 1rem solid var(--DarkBlue);
+  border-radius: 15px;
   box-sizing: border-box;
   width: 64rem;
   max-width: 100%;
@@ -138,12 +138,88 @@ img {
 
 
 
-.container {
+/* --------Header & Footer------*/
+header {
+    background-color: var(--Background1);
+    border-bottom: 1px solid #676767;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0 2rem; 
+    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
+}
+
+
+/*højre side a header, logo*/
+header > :first-child {
+    background-color: var(--DarkBlue);
+    display: flex;
+    align-items: center;
+    align-content: left;
+    padding: 0.75rem;
+}
+/* sidens navn i headeren, linker til forsiden */
+.logo {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/*venstre side a header, nav bar*/
+header > :last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 1 50%;  
+    gap: 1.5rem;       
+}
+header > :last-child a {
+    font-size: 1.5rem;
+    color: var(--DarkBlue);
+    text-decoration: none;
+}
+header > :last-child a:hover {
+    text-decoration: underline;
+}
+
+
+
+footer {
+    background-color: var(--Background1);
+    /*border-top: 1px solid #676767;*/
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;         
+    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
+}
+
+footer > :last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 1 40%;  
+    gap: 1.5rem;       
+}
+
+footer a {
+    color: black;
+}
+
+
+
+/*--------Basic containers og lister------*/
+
+ /*teknisk set en global klasse men den interagere kun med de nestående klasser*/
+main { 
     width: min(100% - 1rem, var(--SideGap));
     margin: 1.2rem auto;
 }
 
-.subcontainer {
+/*subcontainer, bruges til at opdele sektioner*/
+.subcontainer { 
     margin-bottom: 10rem;
     flex: 1;
 }
@@ -167,7 +243,7 @@ img {
 }
 
 
-
+/*doublecontainer, bruges til a display elementer i 2 kolonner*/
 .doublecontainer {
     display: flex;
     justify-content: space-between;
@@ -192,9 +268,6 @@ img {
     }
 }
 
-
-
-
 .pointlist {
     margin-top: 1.5rem;
     padding-left: 1.5rem;
@@ -209,64 +282,74 @@ img {
 
 
 
+/*-------kontakt formular-------*/
 
-
-header {
-    background-color: var(--Background1);
-    border-bottom: 1px solid #676767;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;         
-    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
-}
-
-
-header > :first-child {
+.kontaktform {
     background-color: var(--DarkBlue);
     display: flex;
-    align-items: center;
-    align-content: left;
-    padding: 0.75rem;
+    flex-direction: column;
+    padding: 2cap;
+    gap: 1rem;
+    width: min(55rem, 100%);
+    border-radius: 15px;
 }
-
-
-
-header > :last-child {
+.kontaktform fieldset {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 0 1 50%;  
-    gap: 1.5rem;       
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+
+    border: none;
+    padding: 0; 
+    margin: 0
 }
-header > :last-child a {
+
+.kontaktform label {
     font-size: 1.5rem;
-    color: var(--DarkBlue);
-    text-decoration: none;
-}
-header > :last-child a:hover {
-    text-decoration: underline;
+    font-weight: 500;
+    padding: .5rem;
 }
 
-
-
-
-
-
-
-footer {
+.kontaktform button {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: black;
+    background-color: var(--Background2);
+    width: 6rem;
+    margin-left: .75rem; 
+    margin-bottom: .75rem;
+    border-radius: 0;
+    border: none;
+}
+.kontaktform button:hover {
     background-color: var(--Background1);
-    /*border-top: 1px solid #676767;*/
-    display: flex;
-    height: 5rem;
-    justify-content: space-between;
-    align-items: center;         
-    padding: 0 max(1rem, (100% - var(--SideGap)) / 2);
+}
+.kontaktform button:active {
+    background-color: var(--MediumBlue);
 }
 
-footer > :last-child {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 0 1 40%;  
-    gap: 1.5rem;       
+.userinfo {
+    font-size: 1.5rem;
+    min-width: 35%;
+    margin-left: .75rem; 
+    color: black;
+    border-radius: 0;
+    border: none;
 }
+
+.message {
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+    margin-top: .75rem; 
+    min-height: 15rem;
+
+    resize: vertical;
+    overflow: hidden;
+    
+    color: black;
+    
+    border-radius: 0;
+    border: none;
+}
+
